@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVs2017.capitulo01.Var
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.capitulo01.Troco", "AspNetVS2017.capitulo01.Troco\AspNetVS2017.capitulo01.Troco.csproj", "{405246D8-8E25-4687-93BE-DAB7CAD0EC38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.capitulo01.Fretes", "AspNetVS2017.capitulo01.Fretes\AspNetVS2017.capitulo01.Fretes.csproj", "{C831335A-F2C5-44FF-96E2-B111E4359730}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVs2017.campitulo01.Tabuada", "AspNetVs2017.campitulo01.Tabuada\AspNetVs2017.campitulo01.Tabuada.csproj", "{EB58676E-68CA-4ADF-B914-F6FFDB5290C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{405246D8-8E25-4687-93BE-DAB7CAD0EC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{405246D8-8E25-4687-93BE-DAB7CAD0EC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{405246D8-8E25-4687-93BE-DAB7CAD0EC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C831335A-F2C5-44FF-96E2-B111E4359730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C831335A-F2C5-44FF-96E2-B111E4359730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C831335A-F2C5-44FF-96E2-B111E4359730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C831335A-F2C5-44FF-96E2-B111E4359730}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB58676E-68CA-4ADF-B914-F6FFDB5290C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB58676E-68CA-4ADF-B914-F6FFDB5290C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB58676E-68CA-4ADF-B914-F6FFDB5290C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB58676E-68CA-4ADF-B914-F6FFDB5290C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

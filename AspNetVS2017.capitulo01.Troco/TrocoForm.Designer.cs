@@ -126,12 +126,13 @@
             // 
             // calcularButton
             // 
-            this.calcularButton.Location = new System.Drawing.Point(6, 174);
+            this.calcularButton.Location = new System.Drawing.Point(6, 173);
             this.calcularButton.Name = "calcularButton";
             this.calcularButton.Size = new System.Drawing.Size(269, 53);
             this.calcularButton.TabIndex = 6;
             this.calcularButton.Text = "Ca&lcular";
             this.calcularButton.UseVisualStyleBackColor = true;
+            this.calcularButton.Click += new System.EventHandler(this.calcularButton_Click);
             // 
             // groupBox2
             // 
