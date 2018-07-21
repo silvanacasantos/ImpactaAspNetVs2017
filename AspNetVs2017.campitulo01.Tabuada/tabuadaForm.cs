@@ -38,7 +38,7 @@ namespace AspNetVs2017.campitulo01.Tabuada
 
             var tabuada = Convert.ToInt32(tabuadaTextBox.Text);
 
-            for (int i = 0; i <= 10; i++)
+            for (int i = 0; i <= 10; i++) //condiãoi do for
             {
                 tabuadaListBox.Items.Add($"{tabuada}x {i} = {tabuada * i}");
             }

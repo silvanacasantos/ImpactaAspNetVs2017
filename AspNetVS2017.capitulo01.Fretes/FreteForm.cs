@@ -126,6 +126,11 @@ namespace AspNetVS2017.capitulo01.Fretes
 
 
                     }
+
+        private void ClienteTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
