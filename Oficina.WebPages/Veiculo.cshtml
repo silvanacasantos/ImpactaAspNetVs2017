@@ -1,16 +1,123 @@
-﻿<!DOCTYPE html>
+﻿@using Oficina.WebPages;
+@{
+    var _veiculoAplicacao = new VeiculoAplicacao();
+
+    if (IsPost)
+    {
+        _veiculoAplicacao.Inserir();
+    }
+}
+
+<!DOCTYPE html>
 
 <html>
-<head>
+<head> <!--o que aparece na não aparece na pagina -->
     <meta name="viewport" content="width=device-width" />
-    <title>Cadastro de Veículos</title>  <!--o que aparece na Aba do Navegador-->
-</head>
-<body>
- <h1>Cadastro de Veículos</h1>
-    <hr />
-    <form>
+    <title>Cadastro de Veículos</title>  
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <style>
+        body {
+            /*google fonts baixa as fontes*/
+            font-size:16px;
+            font-family:'Roboto+Slab', sans-serif
+        }
+        label {
+            min-width:100px;
+            display:inline-block;
+        }
 
+        input, select {
+            min-width:200px;
+            min-height:24px;
+            margin-bottom: 5px;
+        }
+
+            input[type=submit] {
+                width:300px;
+            }
+
+    </style>
+</head>
+<body> <!--o que aparece na Aba do Navegador-->
+    <h1>Cadastro de Veículos</h1>
+    @*crtl+K+c para criar os comentários o visual studio te da a facilidade de comentar conforme a liguagem que está utilizando *@
+    <hr />
+    <form method="post">
+        <label for="marca">Marca:</label>
+        <select name="marca" id="marca" onchange="obterModelos(this.value)">
+            <option value="">Selecione a marca</option>
+            @foreach (var marca in _veiculoAplicacao.Marcas)
+            {
+                <option value="@marca.Id" selected="@Convert.ToBoolean(marca.Id.ToString() == _veiculoAplicacao.MarcaSelecionada)">@marca.Nome</option>
+
+                //crtl+K+c para criar os comentários o visual studio te da a facilidade de comentar conforme a liguagem que está utilizando
+            }
+        </select>
+        <br />
+
+        <label for="modelo">Modelo:</label>
+        <select name="modelo" id="modelo">
+            <option value="">Selecione o modelo</option>
+            @foreach (var modelo in _veiculoAplicacao.Modelos)
+            {
+                <option value="@modelo.Id">@modelo.Nome</option>
+            }
+        </select>
+        <br />
+
+        <label for="placa">Placa:</label>
+        <input type="text" name="placa" id="placa" />
+        <br />
+
+        <label for="ano">Ano:</label>
+        <input type="text" name="ano" id="ano" />
+        <br />
+
+        <label for="cor">Cor:</label>
+        <select name="cor" id="cor">
+            <option value="">Selecione a Cor</option>
+            @foreach (var cor in _veiculoAplicacao.Cores)
+            {
+                <option value="@cor.Id">@cor.Nome</option>
+            }
+        </select>
+        <br />
+
+        <label for="combustivel">Combustivel:</label>
+        <select name="combustivel" id="combustivel">
+            <option value="">Selecione o Combustivel</option>
+            @foreach (var combustivel in _veiculoAplicacao.Combustiveis)
+            {
+                <option value="@((int)combustivel)">@combustivel</option>
+            }
+        </select>
+        <br />
+
+        <label for="cambio">Cambio:</label>
+        <select name="cambio" id="cambio">
+            <option value="">Selecione o Cambio</option>
+            @foreach (var cambio in _veiculoAplicacao.Cambios)
+            {
+                <option value="@((Convert.ToInt32(cambio)))">@cambio</option>
+            }
+        </select>
+        <br />
+
+        <label for="Obsservacao">Observação:</label>
+        <br />
+        <textarea name="observacao" id="observacao" rows="10" cols="40"></textarea>
+        <br />
+
+        <input type="submit" value="Gravar" />
 
     </form>
+
+    <script type="text/javascript">
+        function obterModelos(marcaId) {
+            const nomePagina = document.location.pathname;
+            document.location.href = nomePagina + "?marcaId=" + marcaId;
+        }
+    </script>
+
 </body>
 </html>

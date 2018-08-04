@@ -8,8 +8,12 @@ namespace Oficina.Repositorios.SistemaDeArquivos
 {
     public class CorRepositorio
     {
-        private string _caminhoArquivo = ConfigurationManager.AppSettings["caminhoArquivoCor"];
+        private string _caminhoArquivo = Path.Combine(
+            AppDomain.CurrentDomain.BaseDirectory,
+            ConfigurationManager.AppSettings["caminhoArquivoCor"]);
 
+
+        //ToDo: OO - Polimorfismo por sobrecarga. Porque sobrecarga porque o metodo "Selecionar" aparece mais de uma vez na mesma classe.
         public List<Cor> Selecionar()  // referencia a Classe Cor para reconhecer as camadas
         {
             var cores = new List<Cor>();

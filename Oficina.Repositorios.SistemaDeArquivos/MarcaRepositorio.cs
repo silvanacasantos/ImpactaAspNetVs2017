@@ -11,7 +11,8 @@ namespace Oficina.Repositorios.SistemaDeArquivos
 {
    public class MarcaRepositorio
     {
-        private string _caminhoArquivo = ConfigurationManager.AppSettings["caminhoArquivoMarca"];
+        private string _caminhoArquivo = Path.Combine(
+            AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["caminhoArquivoMarca"]);
 
         public List<Marca> Selecionar()  // referencia a Classe Marca para reconhecer as camadas
         {
