@@ -64,29 +64,43 @@ namespace Oficina.WebPages
                 veiculo.Cor = _corRepositorio.Selecionar(Convert.ToInt32(formulario["cor"]));
                 veiculo.Modelo = _modeloRepositorio.SelecionarPorModelo(Convert.ToInt32(formulario["modelo"]));
                 veiculo.Observacao = formulario["observacao"];
-                veiculo.Placa = formulario["placa"]/*.ToYooer()*/;
+                veiculo.Placa = formulario["placa"]/*.ToUpoer()*/;
                 veiculo.Carroceria = TipoCarroceria.Hatch;
 
                 _veiculoRepositorio.Inserir(veiculo);
             }
             catch (FileNotFoundException ex)
             {
-                HttpContext.Current.Items.Add("MensagemErro",$"Arquivo{ex.FileName} não encontrado.");
+                HttpContext.Current.Items.Add("MensagemErro", $"Arquivo{ex.FileName} não encontrado.");
+
+                throw;
             }
             catch (UnauthorizedAccessException)
             {
                 HttpContext.Current.Items.Add("MensagemErro", "Arquivo sem permissao de gravação.");
+
+                throw;
             }
             catch (DirectoryNotFoundException)
             {
                 HttpContext.Current.Items.Add("MensagemErro", "Caminho não encontrado.");
-            }
 
-            catch (Exception)
+                throw;
+            }
+            catch (Exception excecao)
             {
                 HttpContext.Current.Items.Add("MensagemErro", "Ooops! Ocorreu um erro.");
 
-                //throw;
+                throw;
+                //throw excecao;  (outra forma de trazer o erro, não enxerga o detalhe, traz somente a ultima)
+                //logar o objeto excecao.
+                //log4net
+            }
+            finally
+            {
+                //é executado sempre, independente de sucesso ou erro.
+                //executado mesmo se tenha um return.
+                //usar o try cat finally para abrir fechar a conexao com o banco.
             }
         }
     }

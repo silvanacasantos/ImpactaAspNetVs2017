@@ -2,10 +2,6 @@
 @{
     var _veiculoAplicacao = new VeiculoAplicacao();
 
-    if (IsPost)
-    {
-        _veiculoAplicacao.Inserir();
-    }
 }
 
 <!DOCTYPE html>
@@ -36,12 +32,40 @@
                 width:300px;
             }
 
+        #mensagemErro {
+            height: 40px;
+            background-color: #dc3545;
+            margin-bottom: 10px;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 40px;
+        }
+
     </style>
 </head>
-<body> <!--o que aparece na Aba do Navegador-->
+<body onload="exibirMensagem()"> <!--body é o que aparece na Aba do Navegador-->
     <h1>Cadastro de Veículos</h1>
     @*crtl+K+c para criar os comentários o visual studio te da a facilidade de comentar conforme a liguagem que está utilizando *@
     <hr />
+@*razor representado pela arroba, faz um bloco c# dentro do html*@
+@{ 
+    if (IsPost)
+    {
+        try
+        {
+            _veiculoAplicacao.Inserir();
+            Response.Redirect("Veiculo?mensagem=Veículo gravado com sucesso!");
+
+        }
+        catch
+        {
+            <div id="mensagemErro">@HttpContext.Current.Items["MensagemErro"]</div>
+        }
+    }
+}
+
+
     <form method="post">
         <label for="marca">Marca:</label>
         <select name="marca" id="marca" onchange="obterModelos(this.value)">
@@ -66,11 +90,11 @@
         <br />
 
         <label for="placa">Placa:</label>
-        <input type="text" name="placa" id="placa" />
+        <input type="text" name="placa" id="placa" value="@Request.Form["placa"]" />
         <br />
 
         <label for="ano">Ano:</label>
-        <input type="text" name="ano" id="ano" />
+        <input type="text" name="ano" id="ano" value="@Request.Form["ano"]" />
         <br />
 
         <label for="cor">Cor:</label>
@@ -78,7 +102,7 @@
             <option value="">Selecione a Cor</option>
             @foreach (var cor in _veiculoAplicacao.Cores)
             {
-                <option value="@cor.Id">@cor.Nome</option>
+                <option value="@cor.Id" selected="@Convert.ToBoolean(cor.Id.ToString() == Request.Form["cor"])" >@cor.Nome</option>
             }
         </select>
         <br />
@@ -88,7 +112,7 @@
             <option value="">Selecione o Combustivel</option>
             @foreach (var combustivel in _veiculoAplicacao.Combustiveis)
             {
-                <option value="@((int)combustivel)">@combustivel</option>
+                <option value="@((int)combustivel)" selected="@Convert.ToBoolean(((int)combustivel).ToString() == Request.Form["combustivel"])">@combustivel</option>
             }
         </select>
         <br />
@@ -105,7 +129,7 @@
 
         <label for="Obsservacao">Observação:</label>
         <br />
-        <textarea name="observacao" id="observacao" rows="10" cols="40"></textarea>
+        <textarea name="observacao" id="observacao" rows="10" cols="40">@Request.Form["observacao"]</textarea>
         <br />
 
         <input type="submit" value="Gravar" />
@@ -117,6 +141,17 @@
             const nomePagina = document.location.pathname;
             document.location.href = nomePagina + "?marcaId=" + marcaId;
         }
+
+        function exibirMensagem() {
+            const params = (new URL(document.location)).searchParams;
+            const mensagem = params.get("mensagem");
+
+            if (mensagem) {
+                alert(mensagem);
+                document.location.href = "Veiculo";
+            }
+        }
+
     </script>
 
 </body>

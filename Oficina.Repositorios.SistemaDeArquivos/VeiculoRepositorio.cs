@@ -16,19 +16,20 @@ namespace Oficina.Repositorios.SistemaDeArquivos
         private string _caminhoArquivo;
         private XDocument _arquivoXml;
 
-        public VeiculoRepositorio()
+        public VeiculoRepositorio() //metrodo construtor é chamado na classe através do new
         {
 
          _caminhoArquivo = Path.Combine(
             AppDomain.CurrentDomain.BaseDirectory,ConfigurationManager.AppSettings["caminhoArquivoVeiculo"]);
-         _arquivoXml = XDocument.Load(_caminhoArquivo);
-
+         
         }
         
-        public void Inserir(Veiculo veiculo)
+        public void Inserir<T>(T veiculo) where T: Veiculo  //meu metodo passa a ser generico <T> (T = Tipo), usando o conceito herança, desque que o tipo seja um Veiculo
         {
+            _arquivoXml = XDocument.Load(_caminhoArquivo);
+
             var registro = new StringWriter();
-            new XmlSerializer(typeof(Veiculo)).Serialize(registro,veiculo);
+            new XmlSerializer(typeof(T)).Serialize(registro,veiculo);
 
             _arquivoXml.Root.Add(XElement.Parse(registro.ToString()));
             _arquivoXml.Save(_caminhoArquivo);

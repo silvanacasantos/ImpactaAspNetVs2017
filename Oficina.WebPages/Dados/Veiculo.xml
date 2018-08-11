@@ -40,4 +40,130 @@
     <Combustivel>Gasolina</Combustivel>
     <Cambio>Automatico</Cambio>
   </Veiculo>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>499aafa6-8ef2-4e65-9772-067a7976003e</Id>
+    <Placa>CGK -9880</Placa>
+    <Ano>2014</Ano>
+    <Observacao>obaservacao</Observacao>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Argo</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Fiat</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Hibrido</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>a7f1dbee-ef17-464b-83a9-1a4cb32df521</Id>
+    <Placa>CGK -9880</Placa>
+    <Ano>2014</Ano>
+    <Observacao>testeste</Observacao>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Argo</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Fiat</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Alcool</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>1c1e73ba-6518-4967-abab-cc63803215f4</Id>
+    <Placa>CGK -9880</Placa>
+    <Ano>2014</Ano>
+    <Observacao>testeste</Observacao>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Argo</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Fiat</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Alcool</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>0f0c1768-9d6f-4810-9dcd-18bcd8f6f599</Id>
+    <Placa>CGK -9880</Placa>
+    <Ano>2014</Ano>
+    <Observacao>testeste</Observacao>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Argo</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Fiat</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Alcool</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>33001710-265c-4f22-a76e-d8c171d39a93</Id>
+    <Placa>CGK -9880</Placa>
+    <Ano>2014</Ano>
+    <Observacao>obaservacao</Observacao>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Argo</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Fiat</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Hibrido</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>f064a6d1-b538-42a5-a9ab-89e3ac0aeb13</Id>
+    <Placa>CGK -9880</Placa>
+    <Ano>2014</Ano>
+    <Observacao>testeste testeste</Observacao>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Argo</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>Fiat</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
 </Veiculos>
