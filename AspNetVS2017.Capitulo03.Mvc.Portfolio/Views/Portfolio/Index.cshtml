@@ -1,0 +1,23 @@
+﻿@model AspNetVS2017.Capitulo03.Mvc.Portfolio.Models.PortfolioViewModel
+
+@{
+    ViewBag.Title = "Portfólio";
+}
+
+<h2>Portfólio</h2>
+
+<div class="row">
+@foreach (var caminho in Model.CaminhosImagens)
+{
+    <a href="@caminho" class="fancybox">
+        @*dentro do html a classe imgt-responsive deixa a imagem do tamanho do seu navegador*@
+         <img src="@caminho" alt="@caminho" class="img-responsive" />
+    </a>
+}
+</div>
+@section scripts{
+    <script type="text/javascript">
+        //para recuperar o nome da classe acrescenta o .(ponto)
+        $(".fancybox").fancybox();
+    </script>
+    }
