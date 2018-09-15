@@ -48,6 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LojaDbContext.cs" />
+    <Compile Include="LojaDbInitializer.cs" />
+    <Compile Include="Migrations\201809151501423_InitialCreate.cs" />
+    <Compile Include="Migrations\201809151501423_InitialCreate.Designer.cs">
+      <DependentUpon>201809151501423_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809151720459_AddAtivoToProduto.cs" />
+    <Compile Include="Migrations\201809151720459_AddAtivoToProduto.Designer.cs">
+      <DependentUpon>201809151720459_AddAtivoToProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
     <Compile Include="ModelConfiguration\ProdutoConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +71,14 @@
       <Project>{FF26057D-6BF6-437F-8EEF-E6CB81412C09}</Project>
       <Name>Loja.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809151501423_InitialCreate.resx">
+      <DependentUpon>201809151501423_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809151720459_AddAtivoToProduto.resx">
+      <DependentUpon>201809151720459_AddAtivoToProduto.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

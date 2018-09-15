@@ -12,9 +12,11 @@ namespace Loja.Dominio
         public string Nome { get; set; }
         public decimal Preco { get; set; }
         public int Estoque { get; set; }
+        public string Unidade { get; set; }
+        public Boolean Ativo { get; set; }
         
-        public Categoria Categoria { get; set; }
 
-
+        //virtual - habilita o lazy load do EF
+        public virtual Categoria Categoria { get; set; }
     }
 }
